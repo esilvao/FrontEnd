@@ -1,0 +1,35 @@
+.list-unstyled {
+    text-align: center;
+  }
+  
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-container div {
+    display: flex;
+  }
+  
+  .icon-container i {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .row > * {
+    flex: 1;/*el valor "1" indica que los elementos se expandirán para ocupar todo el espacio disponible dentro de su contenedor*/
+  }
+  
+  @media (max-width: 767.98px) {/* es una regla para todas las etiquetas que están dentro de un contenedor con la clase "row" y cuando el ancho de pantalla es menor o igual a 767.98px*/
+    .row > * {
+      flex: 0 0 100%;/*es para que los elementos ocupen todo el ancho disponible y no se ajusten automáticamente al ancho de su contenido*/
+      margin-bottom: 20px;
+    }
+  }
+  
+  .icon-container i:hover {
+    color: #ffcc00;
+    cursor: pointer;
+  }
