@@ -16,7 +16,7 @@ const Navigation = () => {
 let nombreUsuario="";
    const { nombre , isAdmin } = infoUser
    if (!authStatus) {
-    nombreUsuario="No Conectado"
+    nombreUsuario="Iniciar Session"
    }else{
    nombreUsuario=nombre
   
@@ -57,10 +57,12 @@ let nombreUsuario="";
           <Nav>
           <NavDropdown title={nombreUsuario} id="collasible-nav-dropdown"> 
               {!authStatus && (<NavDropdown.Item as={NavLink} to='/login'>Iniciar session</NavDropdown.Item>)}
-              <NavDropdown.Item  as={NavLink} to='/perfilusuario'>Perfil de Usuario</NavDropdown.Item>
+              {authStatus && (<NavDropdown.Item  as={NavLink} to='/perfilusuario'>Perfil de Usuario</NavDropdown.Item>)}
+              {authStatus && (<NavDropdown.Item  as={NavLink} to='/perfilusuario'>Seguimiento de Compras</NavDropdown.Item>)}
+              {authStatus && (<NavDropdown.Item  as={NavLink} to='/perfilusuario'>Historial de Compras</NavDropdown.Item>)}
               
             </NavDropdown>
-            {authStatus ? <Button onClick={cerrarSession}>Cerrar Session</Button> : <Nav.Link as={NavLink} to='/login'></Nav.Link>}
+            {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
             <Nav.Link eventKey={2} href="#memes">
               Carro de compras
             </Nav.Link>

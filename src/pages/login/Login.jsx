@@ -1,4 +1,4 @@
-import {Row,Col,Container} from 'react-bootstrap'
+import {Row,Col,Container, Button} from 'react-bootstrap'
 import logoEmpresa from "../../assets/LogoEmpresa.jpg";
 import '../../pages/login/Login.css'
 import Carousel from 'react-bootstrap/Carousel';
@@ -36,6 +36,10 @@ const Login = () => {
     ...previo,
     [e.target.name]: e.target.value
    }))
+  }
+
+  const irHome = () => {
+    navegar('/')
   }
 
   const handlerSubmit = async(e) => {
@@ -85,10 +89,11 @@ const Login = () => {
 
                       {registrarse && ( <input className='d-flex justify-content-center mb-3  w-75' type="text" name="imagen" value={user.imagen} placeholder="Ingrese imagen" onChange={handleChange}></input>)}
 
-             <button type="submit" className=" mt-2 me-5 rounded-pill  bg-secondary text-white" > Iniciar Session</button>
+
+                      <Button type="submit" className=" mt-2 me-5 rounded-pill text-white w-25" size="sm" > Iniciar Session</Button>
                 
-              <button type="button" className=" mb-5 rounded-pill bg-secondary text-white" onClick={changeMode}> Registrarse</button>
-                
+                      {registrarse ? <Button className=" mt-2 me-5 rounded-pill text-white w-25"  size="sm" onClick={irHome}>Salir</Button> : <Button type="button" className=" mt-2 me-5 rounded-pill text-white  w-25" size="sm" onClick={changeMode}> Registrarse</Button>}
+              
               </form>
        
             

@@ -133,7 +133,7 @@ const CarrucelHome = () => {
           />
           <img
             className="Carousel"
-            src="https://images.unsplash.com/photo-1544413164-5f1b361f5b69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+            src="https://images.unsplash.com/photo-1515938736719-95b568dc8dd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHJvcGElMjBkZSUyMGhvbWJyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
             alt="Third slide"
             style={{ width: '400px', height: '400px' }}
           />
