@@ -6,8 +6,21 @@ import { NavLink} from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Form, Button } from 'react-bootstrap';
 import logoEmpresa from '../../assets/LogoEmpresa.jpg';
+import { useContext , useEffect} from 'react';
+import UserContext from '../../context/user/UserContext'
 
 const Navigation = () => {
+
+  const {infoUser,authStatus,cerrarSession} = useContext(UserContext)
+  
+let nombreUsuario="";
+   const { nombre , isAdmin } = infoUser
+   if (!authStatus) {
+    nombreUsuario="No Conectado"
+   }else{
+   nombreUsuario=nombre
+  
+  }
 
   return (
     <div>    
@@ -25,10 +38,10 @@ const Navigation = () => {
               <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to='/listaproductos' >Catalogo</Nav.Link>
-            <NavDropdown title="Admin Productos" id="collasible-nav-dropdown">
+            {isAdmin && (<NavDropdown title="Admin Productos" id="collasible-nav-dropdown">
               <NavDropdown.Item  as={NavLink} to='/admin/nuevoproducto'>Crear Productos</NavDropdown.Item>
               <NavDropdown.Item  as={NavLink} to='/admin/editarproducto'>Editar Productos</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown>)}
           </Nav>
             
             <Form className="d-flex">
@@ -42,11 +55,12 @@ const Navigation = () => {
           </Form>
 
           <Nav>
-          <NavDropdown title="Hola, Inicia Sesión" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to='/login'>Iniciar session</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to='/registro'>Registro de Usuario</NavDropdown.Item>
+          <NavDropdown title={nombreUsuario} id="collasible-nav-dropdown"> 
+              {!authStatus && (<NavDropdown.Item as={NavLink} to='/login'>Iniciar session</NavDropdown.Item>)}
               <NavDropdown.Item  as={NavLink} to='/perfilusuario'>Perfil de Usuario</NavDropdown.Item>
+              
             </NavDropdown>
+            {authStatus ? <Button onClick={cerrarSession}>Cerrar Session</Button> : <Nav.Link as={NavLink} to='/login'></Nav.Link>}
             <Nav.Link eventKey={2} href="#memes">
               Carro de compras
             </Nav.Link>
