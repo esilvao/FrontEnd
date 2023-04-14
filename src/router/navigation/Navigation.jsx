@@ -51,7 +51,7 @@ let nombreUsuario="";
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success" style={{ backgroundColor: 'white' }}>Search</Button>
+            <Button variant="outline-success" style={{ backgroundColor: 'white' }}>Buscar</Button>
           </Form>
 
           <Nav>

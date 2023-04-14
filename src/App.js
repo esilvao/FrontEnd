@@ -1,19 +1,19 @@
 
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
-//import {useState} from 'react'
-import Login from './pages/login/Login'
-import Registro from './pages/registro/Registro'
-import PerfilUsuario from './pages/perfilusuario/PerfilUsuario'
-import ListaProductos from './pages/listaProductos/ListaProductos'
-import DetalleProducto from './pages/detalleproducto/DetalleProducto'
-import Footer from './components/footer/Footer'
-import Home from './pages/home/Home'
-import Layout from './components/layout/Layout'
-import NuevoProducto from './pages/admin/productos/NuevoProducto'
-import EditarProducto from './pages/admin/productos/EditarProducto'
+import Login from './pages/login/Login';
+import PerfilUsuario from './pages/perfilusuario/PerfilUsuario';
+import ListaProductos from './pages/listaProductos/Products';
+import DetalleProducto from './pages/detalleproducto/DetalleProducto';
+import Footer from './components/footer/Footer';
+import Home from './pages/home/Home';
+import Layout from './components/layout/Layout';
+import NuevoProducto from './pages/admin/productos/NuevoProducto';
+import EditarProducto from './pages/admin/productos/EditarProducto';
 import UserContext from './context/user/UserContext';
 import { useContext ,useEffect} from 'react';
+//*import Registro from './pages/registro/Registro'
+//import {useState} from 'react'
 
 
 function App() {
