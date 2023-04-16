@@ -33,12 +33,12 @@ let nombreUsuario="";
               height='40'
               alt='Mareli'
               loading='lazy'/>
-              MARELI </Navbar.Brand>
+                MARELI </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to='/listaproductos' >Catalogo</Nav.Link>
-            <Nav.Link as={NavLink} to='/detalleproducto' >Catalogo</Nav.Link>
+            <Nav.Link as={NavLink} to='/detalleproducto' ></Nav.Link>
             {isAdmin && (<NavDropdown title="Admin Productos" id="collasible-nav-dropdown">
               <NavDropdown.Item  as={NavLink} to='/admin/nuevoproducto'>Crear Productos</NavDropdown.Item>
               <NavDropdown.Item  as={NavLink} to='/admin/editarproducto'>Editar Productos</NavDropdown.Item>

@@ -19,16 +19,10 @@ const Products = () => {
   {/*console.log(products)*/ }
 
   return (
-    <div>
-      <div className="bg-white">
-        <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8  " >
-          <div className="container-titulo">
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
-              Nuestros Productos
-            </h2>
-          </div>
-
-          <Container className="mt-5 mb-5" >
+    <Container className="titulo">
+              <h1>Nuestros Productos</h1>
+      
+    <Container className="mt-5 mb-5" >{/* margen inferior y superior*/}
               <Row xs={1} md={2} className="g-4">
         {/* con este array recorro todo el array de producto del provider - por cada iteración se creara una tarjeta o card*/ }
               {products.map((product) => (
@@ -41,10 +35,8 @@ const Products = () => {
 
             </Row>
           </Container>
-          {/*</div>*/}
-        </div>
-      </div>
-    </div>
+          </Container>
+    
   )
 }
 
