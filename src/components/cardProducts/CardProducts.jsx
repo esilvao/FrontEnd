@@ -1,17 +1,21 @@
 import { Link } from 'react-router-dom';
-import { Card, Button, Col, Container, Row } from 'react-bootstrap';
+import { Card, Button  } from 'react-bootstrap';
 import './CardProducts.css';
 import React from 'react';
 
 
-
+{/* desde productos paso las propiedades del producto*/}
 const CardProducts = ({ product }) => {
   const { _id, image, marca, genero, stock, producto, precio } = product;
 
   return (
+<<<<<<< HEAD
 
         
                 <Link to={`/detalleproducto/${_id}`} style={{ textDecoration: 'none' }}>
+=======
+                <Link to={`/product/${_id}`} style={{ textDecoration: 'none' }}>
+>>>>>>> origin/marta
                     <Card className="CardProducts ms-3" >
                         <Card.Img variant="top" src={image} />
                         <Card.Body style={{ marginBottom: '5px' }}>
@@ -22,7 +26,7 @@ const CardProducts = ({ product }) => {
                                 <p className="text-sm font-medium text-gray-900">${precio}</p>
                             </Card.Text>
                             <Button variant="primary" disabled={stock === 0}>
-                                {stock === 0 ? 'Sin Stock' : 'Comprar'}
+                                {stock === 0 ? 'Sin Stock' : 'Comprar'}{/* usamos un operador ternario para una condición booleana: ejemplo condición ? expresión si es verdadera : expresión si es falsa*/}
                             </Button>
                         </Card.Body>
                     </Card>

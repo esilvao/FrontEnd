@@ -36,8 +36,13 @@ function App() {
           <Route path="/" element={<Home />}/>
           {!authStatus && (<Route path="/login" element={<Login/>}/>)}
           <Route path="/perfilusuario" element={<PerfilUsuario />}/>
+<<<<<<< HEAD
           <Route path="/listaProductos" element={<ListaProductos />}/>
           <Route path='/detalleproducto/:id' element={<DetalleProducto />} />
+=======
+          <Route path="/listaproductos" element={<ListaProductos />}/>
+          <Route path="/product/:id" element={<DetalleProducto />}/>
+>>>>>>> origin/marta
           <Route path="/footer" element={<Footer />}/>
           {isAdmin && (<Route path="/admin/nuevoproducto" element={<NuevoProducto />}/> )}
           {isAdmin && (<Route path="/admin/editarproducto" element={<EditarProducto />}/> )}         

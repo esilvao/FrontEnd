@@ -1,10 +1,10 @@
 import axiosClient from "../../config/axiosClient";
 import productReducers from "./ProductReducer";
 import ProductContext from "./ProductContext";
-import { useReducer } from "react";
+import { useReducer } from "react";//* es un hook
 
 
-
+{/* almaceno mis productos desde la base de datos*/}
 const ProductProvider = ({ children }) => {
 
     const initialState = {
@@ -30,7 +30,7 @@ const ProductProvider = ({ children }) => {
     const [productState, dispatch] = useReducer(productReducers, initialState)//*dispatch actualiza información del estado que cree
 
     const getProduct = async (id) => {
-    const result = await axiosClient.get(`/product/${id}`)
+    const result = await axiosClient.get(`product/${id}`)//obtiene los datos del backend del productRouter
     const product = result.data.info;
 
         dispatch({
@@ -40,34 +40,23 @@ const ProductProvider = ({ children }) => {
 
         return product;
     }
-
+{/* a traves del axios consumo datos del backend*/}
     const getProducts = async () => {
-        const result = await axiosClient.get("/product")
-
+        const result = await axiosClient.get("/product")//* capturamos la data de la información, axios guarda la información en data.
+{/* la información de los productos se cargan en data e Info que trae la información desde desde el controlador de productos del backend */}
         dispatch({
             type: "GET_PRODUCTS",
             payload: result.data.info
         })
     }
 
-    const reduceStock = async (cartItems) => {
-        try {
-            const productos = { cartItems }
-            console.log(productos)
-            const result = await axiosClient.put("/product/reduce", productos)
-            console.log(result.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
+    {/* el ProductState es el valor inicial, cuando se ejecuta el dispatch se llena de datos con la información de base de datos*/}
     return (
-        <ProductContext.Provider value={{
-            getProduct,
-            getProducts,
+        <ProductContext.Provider value={{getProduct, getProducts,
             products: productState.products,
             product: productState.product,
-            reduceStock
+           //*reduceStock
         }}>
             {children}
         </ProductContext.Provider>
