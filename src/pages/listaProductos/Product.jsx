@@ -162,17 +162,6 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-<<<<<<< HEAD
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
-
-export default Product;
-=======
             </>
           )}
         </div>
@@ -181,4 +170,3 @@ export default Product;
   };
   
   export default Product;
->>>>>>> origin/marta

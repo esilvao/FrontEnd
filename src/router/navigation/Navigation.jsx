@@ -38,7 +38,6 @@ let nombreUsuario="";
               <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to='/listaproductos' >Catalogo</Nav.Link>
-            <Nav.Link as={NavLink} to='/detalleproducto' >Catalogo</Nav.Link>
             {isAdmin && (<NavDropdown title="Admin Productos" id="collasible-nav-dropdown">
               <NavDropdown.Item  as={NavLink} to='/admin/nuevoproducto'>Crear Productos</NavDropdown.Item>
               <NavDropdown.Item  as={NavLink} to='/admin/editarproducto'>Editar Productos</NavDropdown.Item>
@@ -64,9 +63,7 @@ let nombreUsuario="";
               
             </NavDropdown>
             {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
-            <Nav.Link eventKey={2} href="#memes">
-              Carro de compras
-            </Nav.Link>
+            <Nav.Link as={NavLink} to='/checkout' >Carro de Compras</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

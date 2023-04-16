@@ -27,24 +27,6 @@ const Products = () => {
               Nuestros Productos
             </h2>
           </div>
-<<<<<<< HEAD
-         {/*<div className="mt-6 grid grid-cols-4 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">*/} 
-        <Container className="mt-5 mb-5" >
-         <Row xs={1} md={2} className="g-4">
-          
-          {products.map((product) => (
-          
-            <Col className="" md={3}>
-            <CardProducts className="m-auto" key={product.id} product={product} />
-            </Col>
-           
-          
-          ))}
-          
-        </Row>
-        </Container>
-          {/*</div>*/} 
-=======
 
           <Container className="mt-5 mb-5" >
               <Row xs={1} md={2} className="g-4">
@@ -60,7 +42,6 @@ const Products = () => {
             </Row>
           </Container>
           {/*</div>*/}
->>>>>>> origin/marta
         </div>
       </div>
     </div>

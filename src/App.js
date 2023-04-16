@@ -1,4 +1,3 @@
-
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Login from './pages/login/Login';
@@ -12,6 +11,7 @@ import NuevoProducto from './pages/admin/productos/NuevoProducto';
 import EditarProducto from './pages/admin/productos/EditarProducto';
 import UserContext from './context/user/UserContext';
 import { useContext ,useEffect} from 'react';
+import Checkout from './pages/checkout/Checkout'
 //*import Registro from './pages/registro/Registro'
 //import {useState} from 'react'
 
@@ -36,16 +36,12 @@ function App() {
           <Route path="/" element={<Home />}/>
           {!authStatus && (<Route path="/login" element={<Login/>}/>)}
           <Route path="/perfilusuario" element={<PerfilUsuario />}/>
-<<<<<<< HEAD
-          <Route path="/listaProductos" element={<ListaProductos />}/>
-          <Route path='/detalleproducto/:id' element={<DetalleProducto />} />
-=======
           <Route path="/listaproductos" element={<ListaProductos />}/>
           <Route path="/product/:id" element={<DetalleProducto />}/>
->>>>>>> origin/marta
           <Route path="/footer" element={<Footer />}/>
           {isAdmin && (<Route path="/admin/nuevoproducto" element={<NuevoProducto />}/> )}
-          {isAdmin && (<Route path="/admin/editarproducto" element={<EditarProducto />}/> )}         
+          {isAdmin && (<Route path="/admin/editarproducto" element={<EditarProducto />}/> )}
+          <Route path='/checkout' element={<Checkout />} />          
         </Route>
       </Routes>
     </div>

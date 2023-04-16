@@ -9,13 +9,7 @@ const CardProducts = ({ product }) => {
   const { _id, image, marca, genero, stock, producto, precio } = product;
 
   return (
-<<<<<<< HEAD
-
-        
-                <Link to={`/detalleproducto/${_id}`} style={{ textDecoration: 'none' }}>
-=======
                 <Link to={`/product/${_id}`} style={{ textDecoration: 'none' }}>
->>>>>>> origin/marta
                     <Card className="CardProducts ms-3" >
                         <Card.Img variant="top" src={image} />
                         <Card.Body style={{ marginBottom: '5px' }}>
