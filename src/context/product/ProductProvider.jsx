@@ -13,22 +13,18 @@ const ProductProvider = ({ children }) => {
             _id: "",
             categoria: "",
             subCategoria: "",
-            SKU: "",
+            SKU:  "",
             producto: "",
-            marca: "",
-            precio: "",
+            marca:  "",
+            precio:  "",
             genero: "",
             talla: "",
-            color: "",
-            material: "",
+            color:  "",
+            material:  "",
             temporada: "",
-            dateUpdate: "",
-            stock: "",
-            bodega: "",
-            images:""
-
-
-        }]
+            stock:  "",
+            image: ""
+          }]
     }
 
     const [productState, dispatch] = useReducer(productReducers, initialState)//*dispatch actualiza información del estado que cree

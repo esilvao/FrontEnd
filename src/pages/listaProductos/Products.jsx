@@ -34,7 +34,7 @@ const Products = () => {
           {products.map((product) => (
           
             <Col className="" md={3}>
-            <CardProducts className="m-auto" key={product._id} product={product} />
+            <CardProducts className="m-auto" key={product.id} product={product} />
             </Col>
            
           

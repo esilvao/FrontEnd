@@ -1,16 +1,26 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { useContext,useEffect } from 'react';
+import ProductContext from '../../context/product/ProductContext';
 
-
-const DetalleProducto = ({product}) => {
-  const { _id, image, categoria, subCategoria, producto, marca, genero, talla, color, material, temporada, stock, precio } = product;
+const DetalleProducto = () => {
+  const { id } = useParams()
+  const { getProduct,product } = useContext(ProductContext)
+  useEffect(() => {
+    const fetchProduct = async () => {
+      await getProduct(id);
+    };
+    fetchProduct();
+  }, []);
+  const {  image, categoria, subCategoria, producto, marca, genero, talla, color, material, temporada, stock, precio } = product[0];
   return (
 
     <div className="container my-5">
     <div className="row justify-content-center">
       <div className="col-lg-8">
         <Card>
-          <Card.Img variant="top" src={image} />
+        <Card.Img variant="top" src={image} />
           <Card.Body>
             <Card.Title>{producto}</Card.Title>
             <Card.Text>
