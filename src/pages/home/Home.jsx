@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
+import DetalleProducto from '../detalleproducto/DetalleProducto';
 import Badge from 'react-bootstrap/Badge';
 
 const Home = () => {
