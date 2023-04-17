@@ -1,7 +1,4 @@
 import {
-  MDBCard,
-  MDBCardBody,
-  MDBIcon,
   MDBTypography,
 } from "mdb-react-ui-kit";
 import { useContext } from "react";
@@ -15,14 +12,14 @@ const Checkout = () => {
 
   return (
     <div className="mt-5 ms-5 me-5 mb-5">
-      <h5>Total de productos  en el carro {cartcount}</h5>
+     
       <div>
 
 
         <div className="d-flex justify-content-between">
           <div className="d-flex flex-row align-items-center">
-            <div className="ms-3">
-              <MDBTypography tag="h8"> Producto </MDBTypography>
+            <div className="ms-1">
+              <MDBTypography tag="h6"> Detalle de Compra </MDBTypography>
               <p className="small mb-0"></p>
             </div>
           </div>
@@ -45,7 +42,8 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem._id} cartItem={cartItem} />
       ))}
-      <h5>Precio Total :  {cartTotal}</h5>
+       <h6 className="ms-1">Total de productos  en el carro {cartcount}</h6>
+      <h6 className="ms-1">Precio Total :  {cartTotal}</h6>
     </div>
   );
 }

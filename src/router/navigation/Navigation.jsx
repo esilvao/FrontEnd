@@ -6,7 +6,7 @@ import { NavLink} from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Form, Button } from 'react-bootstrap';
 import logoEmpresa from '../../assets/LogoEmpresa.jpg';
-import { useContext , useEffect} from 'react';
+import { useContext } from 'react';
 import UserContext from '../../context/user/UserContext'
 import CartContext from '../../context/cart/CartContext';
 import CartIcon from "../../components/cartModal/cartIcon/CartIcon";
@@ -67,7 +67,7 @@ let nombreUsuario="";
               
             </NavDropdown>
             {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
-            <Nav.Link as={NavLink} to='/checkout' >Carro de Compras</Nav.Link>
+            <Nav.Link as={NavLink} to='/checkout' >Bolsa de Campras</Nav.Link>
             <CartIcon />
             {isCartOpen && <CartDropDown />}
           </Nav>

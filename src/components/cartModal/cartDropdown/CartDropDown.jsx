@@ -31,7 +31,7 @@ const CartDropdown = () => {
                     <span className="empty-message">Sin Productos en el carro</span>
                 }
             </div>
-            <Button onClick={goToCheckout}>Checkout</Button> <Button onClick={goToHome}>Catalogo</Button> 
+            <Button onClick={goToCheckout}>Bolsa de Compras</Button> <Button onClick={goToHome}>Catalogo</Button> 
         </div>
     </>
   )
