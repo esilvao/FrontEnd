@@ -9,13 +9,13 @@ const cartReducer = (state, action) => {
           }
     case "SET_IS_CARDS_OPEN":
               return {
-                ...state, isCardOpen: payload
+                ...state, isCartOpen: payload
               }
       case "CLEAR_TO_CHECKOUT":
             return {
               cartItems:[],
-              cardTotal:0,
-              cardcount:0,
+              cartTotal:0,
+              cartcount:0,
               isCardOpen:false
             }
       default:

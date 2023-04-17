@@ -8,10 +8,14 @@ import { Form, Button } from 'react-bootstrap';
 import logoEmpresa from '../../assets/LogoEmpresa.jpg';
 import { useContext , useEffect} from 'react';
 import UserContext from '../../context/user/UserContext'
+import CartContext from '../../context/cart/CartContext';
+import CartIcon from "../../components/cartModal/cartIcon/CartIcon";
+import CartDropDown from "../../components/cartModal/cartDropdown/CartDropDown"
 
 const Navigation = () => {
 
   const {infoUser,authStatus,cerrarSession} = useContext(UserContext)
+  const { isCartOpen } = useContext(CartContext)
   
 let nombreUsuario="";
    const { nombre , isAdmin } = infoUser
@@ -64,6 +68,8 @@ let nombreUsuario="";
             </NavDropdown>
             {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
             <Nav.Link as={NavLink} to='/checkout' >Carro de Compras</Nav.Link>
+            <CartIcon />
+            {isCartOpen && <CartDropDown />}
           </Nav>
         </Navbar.Collapse>
       </Container>
