@@ -52,7 +52,7 @@ let nombreUsuario="";
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success" style={{ backgroundColor: 'white' }}>Buscar</Button>
+            <Button variant="secondary" >Buscar</Button>
           </Form>
 
           <Nav>
@@ -64,9 +64,7 @@ let nombreUsuario="";
               
             </NavDropdown>
             {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
-            <Nav.Link eventKey={2} href="#memes">
-              Carro de compras
-            </Nav.Link>
+            <Nav.Link as={NavLink} to='/checkout' >Carro de Compras</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

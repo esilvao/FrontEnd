@@ -44,7 +44,7 @@ const PerfilUsuario = () => {
               <Row>
                 <Col>
                   <div className="d-inline-flex"> 
-                  {editable ? <h4 className="mr-2"> Editar  </h4>: <h4 className="mr-2"> Ver</h4>} {isAdmin ? <h4>  Administrador </h4> : <h4> Cliente</h4>} 
+                  {editable ? <h4 className="mr-2"> {isAdmin ? "Editar: Administrador" : "Editar: Cliente"}   </h4>: <h4 className="mr-2"> {isAdmin ? "Ver: Administrador" : "Ver: Cliente"} </h4>} 
                   </div>
                 </Col>
               </Row>

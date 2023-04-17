@@ -1,12 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import ProductContext from "../../context/product/ProductContext";
+import CartContext from '../../context/cart/CartContext';
 import { useParams, Link } from "react-router-dom";
 import { Card, Button, Container, Row, Col, Figure } from 'react-bootstrap';
 
 const DetalleProducto = () => {
+
+  const { getProduct,product } = useContext(ProductContext)
+  const { agregarALCarro, cartCount } = useContext(CartContext)
+  const handleAdd = () => {  agregarALCarro(product[0])}
   const { id } = useParams(); //* este hook obtiene el id 
 
-  const { getProduct, product } = useContext(ProductContext);
   const { image, categoria, subCategoria, producto, marca, genero, talla, color, material,
     temporada, stock, precio } = product[0];
 
