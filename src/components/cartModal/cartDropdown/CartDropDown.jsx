@@ -9,7 +9,6 @@ const CartDropdown = () => {
     const navigate = useNavigate()
     const {cartItems,setIsCarroAbierto} = useContext(CartContext)
 
-
     const goToCheckout = () => {
       setIsCarroAbierto(false)
       navigate("/checkout")
@@ -19,12 +18,14 @@ const CartDropdown = () => {
       setIsCarroAbierto(false)
       navigate("/listaproductos")
   }
+  console.log(cartItems.length)
 
   return (
     <>
+  
         <div className="cart-dropdown-container">
             <div className="cart-items">
-                {cartItems ? (cartItems.map((cartItem) => (
+                {cartItems.length>0 ? (cartItems.map((cartItem) => (
                     <CartItem key={cartItem._id} cartItem={cartItem}/> 
                 ))
                 ) : 
@@ -33,6 +34,7 @@ const CartDropdown = () => {
             </div>
             <Button onClick={goToCheckout}>Bolsa de Compras</Button> <Button onClick={goToHome}>Catalogo</Button> 
         </div>
+
     </>
   )
 }
