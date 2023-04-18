@@ -1,3 +1,11 @@
+.carrusel {
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
 .BeerListItem-img {
   height: auto;
   max-height: 500px;
@@ -13,3 +21,4 @@
   max-width: auto;
 
 }
+
