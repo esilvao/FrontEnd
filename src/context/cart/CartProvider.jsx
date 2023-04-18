@@ -8,7 +8,7 @@ import { agregarProductoAlCarro,eliminarProductoDelCarro ,limpiarCarro} from './
 const CartProvider = ({children}) => {
 const inicialState = {
   cartItems:[],
-  cardTotal:0,
+  cartTotal:0,
   cartcount:0,
   isCardOpen:false
 }
