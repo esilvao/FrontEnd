@@ -2,13 +2,10 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Footer.css';
 
-
-
 const Footer = () => {
   return (
-
     <div>
-    <footer className='text-white bg-dark'>
+    <footer className='text-white bg-dark pt-5'>
       <div className='container'>
         <nav className='row'>
           <ul className='col-12 col-md list-unstyled'>
@@ -42,15 +39,13 @@ const Footer = () => {
         </nav>
       </div>
     </footer>
-  
-    <div className='text-white text-center py-3 bg-dark'>
-    © DERECHOS RESERVADOS 2023
+
+      <div className='text-white text-center py-3 bg-dark'>
+        <p className='mb-0'>© Derechos Reservados 2023</p>
+        <p className='m-0'>Sitio web desarrollado por Elisa Silva y Marta Nicoli</p>
+      </div>
     </div>
-  </div>
-  
-  )
+  );
 }
 
-export default Footer
-    
-
+export default Footer;

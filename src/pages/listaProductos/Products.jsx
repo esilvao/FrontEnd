@@ -40,7 +40,7 @@ const Products = () => {
                   className="m-auto"
                   key={product._id}
                   product={product}
-                />;
+                />
               </Col>
             ))}
           </Row>
