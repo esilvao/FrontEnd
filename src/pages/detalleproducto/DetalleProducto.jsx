@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import ProductContext from "../../context/product/ProductContext";
 import CartContext from '../../context/cart/CartContext';
-import { useParams, Link } from "react-router-dom";
-import { Card, Button, Container, Row, Col, Figure } from 'react-bootstrap';
+import { useParams } from "react-router-dom";
+import { Button, Container, Row, Col, Figure } from 'react-bootstrap';
 
 const DetalleProducto = () => {
 
@@ -46,7 +46,6 @@ const DetalleProducto = () => {
               <p className="my-2">Stock: {stock}</p>
               <p className="text-sm font-medium text-gray-900">${precio}</p>
               <Button onClick={handleAdd} variant="success" disabled={stock === 0}>
-
                 {stock === 0 ? 'Sin Stock' : 'Comprar'}
               </Button>
             </Col>

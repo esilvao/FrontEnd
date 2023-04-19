@@ -55,7 +55,6 @@ const limpiarCheckout = () => {
   })
 }
 
-
 //resive el valor booleando para saber si el carro esta abiero o cerrado
 const setIsCarroAbierto = (carroAbierto) => {
   dispatch({
