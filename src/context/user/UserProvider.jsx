@@ -38,10 +38,22 @@ const UserProvider = ({children}) => {
     }
   }
   
-  const verificarTokent = async() => {
-    console.log("INgresa a verificarTokent ")
+  const editarUser = async(data) => {
     const miTocken= localStorage.getItem ("token")
-    console.log("MI TOKENNNN " + miTocken)
+    if(miTocken) {
+      axiosClient.defaults.headers.common["Authorization"] = `Bearer ${miTocken}`
+  } else {
+      delete axiosClient.defaults.headers.common["Authorization"]
+  }
+    const updateUser = await axiosClient.put("/users/myprofile", data)
+    if (updateUser.data.success){
+      dispatch({type: "INFO_USER", payload: updateUser.data.info })
+    }
+    console.log(updateUser)
+}
+
+  const verificarTokent = async() => {
+    const miTocken= localStorage.getItem ("token")
     if(miTocken) {
       axiosClient.defaults.headers.common["Authorization"] = `Bearer ${miTocken}`
   } else {
@@ -49,9 +61,7 @@ const UserProvider = ({children}) => {
   }
 
     try{
-      console.log("userlogin " )
         const userConect = await axiosClient.get("/users/verificarUsuario")
-        console.log("userlogin " + userConect.data.info)
         if (userConect.data.success){
           dispatch({type: "INFO_USER", payload: userConect.data.info })
         }
@@ -73,7 +83,7 @@ const UserProvider = ({children}) => {
 
   return (
    
-    <UserContext.Provider value={{msg,LoginUser,registerUser,verificarTokent,cerrarSession, infoUser: userState.infoUser,authStatus: userState.authStatus }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{msg,LoginUser,registerUser,verificarTokent,cerrarSession,editarUser, infoUser: userState.infoUser,authStatus: userState.authStatus }}>{children}</UserContext.Provider>
   )
 }
 

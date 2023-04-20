@@ -7,9 +7,8 @@ import { useState } from "react";
 
 const PerfilUsuario = () => {
 
-  
 
-  const { infoUser } = useContext(UserContext)
+  const { infoUser ,editarUser } = useContext(UserContext)
   const { nombre, isAdmin, apellido, telefono, email, imagen, password } = infoUser
 
   const userValorInicial = {
@@ -24,14 +23,21 @@ const PerfilUsuario = () => {
   const [userValue, setUserValue] = useState(userValorInicial)
   const [editable, setEditable] = useState(false);
 
-  const handleValueChange = (event) => {
-    setUserValue(event.target.value);
-  };
+  const handleValueChange = async(e) => {
+    setUserValue({
+      ...userValue,
+      [e.target.name]: e.target.value
+    })
+  }
+
 
   const handleEditar = () => {
     setEditable(!editable);
   };
-
+  
+  const handleGuardar = () => {
+    editarUser(userValue)
+  };
 
 
   return (
@@ -42,9 +48,9 @@ const PerfilUsuario = () => {
           <Col>
             <Container>
               <Row>
-                <Col>
+                <Col >
                   <div className="d-inline-flex"> 
-                  {editable ? <h4 className="mr-2"> {isAdmin ? "Editar: Administrador" : "Editar: Cliente"}   </h4>: <h4 className="mr-2"> {isAdmin ? "Ver: Administrador" : "Ver: Cliente"} </h4>} 
+                  {editable ? <h4   className="mr-2 text-success" expand="lg"> {isAdmin ? "Editar: Administrador" : "Editar: Cliente"}   </h4>: <h4 className="mr-2 "> {isAdmin ? "Perfil: Administrador" : "Perfil: Cliente"} </h4>} 
                   </div>
                 </Col>
               </Row>
@@ -87,7 +93,8 @@ const PerfilUsuario = () => {
         </Row>
         <Row>
           <Col>
-            <Button onClick={handleEditar}>Editar</Button>
+          {!editable ?   <Button onClick={handleEditar}>Editar</Button> :  <Button variant="success" onClick={handleGuardar}>Guardar</Button>}
+
           </Col>
         </Row>
 
