@@ -35,6 +35,6 @@ const CardProducts = ({ product }) => {
 
     );
 
-};
+}
 
 export default CardProducts
