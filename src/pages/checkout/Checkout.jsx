@@ -4,6 +4,7 @@ import {
 import { useContext } from "react";
 import CartContext from "../../context/cart/CartContext";
 import CheckoutItem from "../../components/checkout_item/CheckoutItem";
+import Paypal from "../../components/layout/Paypal";
 
 
 const Checkout = () => {
@@ -44,6 +45,11 @@ const Checkout = () => {
       ))}
        <h6 className="ms-1">Total de productos  en el carro {cartcount}</h6>
       <h6 className="ms-1">Precio Total :  {cartTotal}</h6>
+  
+      {cartItems.length ? <Paypal/> : null} 
+
+
+  
     </div>
   );
 }

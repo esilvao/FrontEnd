@@ -26,12 +26,10 @@ const CardProducts = ({ product }) => {
                 </Card.Body>
                 </Link>
                 <Button onClick={handleAdd} variant="success" disabled={stock === 0}>
-                        {stock === 0 ? 'Sin Stock' : 'Comprar'}{/* usamos un operador ternario para una condición booleana: ejemplo condición ? expresión si es verdadera : expresión si es falsa*/}
+                        {stock === 0 ? 'Sin Stock' :'Añadir al carro'}{/* usamos un operador ternario para una condición booleana: ejemplo condición ? expresión si es verdadera : expresión si es falsa*/}
                     </Button>
             </Card>
        
-
-
 
     );
 

@@ -52,7 +52,7 @@ let nombreUsuario="";
             <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Buscar"
               className="me-2"
               aria-label="Search"
             />
@@ -68,7 +68,7 @@ let nombreUsuario="";
               
             </NavDropdown>
             {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
-            <Nav.Link as={NavLink} to='/checkout' >Bolsa de Campras</Nav.Link>
+            <Nav.Link as={NavLink} to='/checkout' >Bolsa de Compras</Nav.Link>
             <CartIcon />
             {isCartOpen && <CartDropDown />}
           </Nav>
