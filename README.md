@@ -7,3 +7,7 @@ Autenticación de usuarios: los usuarios pueden crear una cuenta o iniciar sesi�
 Carrito de compras: los usuarios pueden agregar y eliminar productos de su carrito de compras y ver el total de su compra.
 Catálogo de productos: los usuarios pueden navegar por una lista de productos y ver detalles sobre cada uno de ellos.
 Transacciones de compra: los usuarios pueden realizar una compra utilizando su carrito de compras. El servidor API maneja el procesamiento de pagos y la actualización de inventario.
+
+Link de la aplicacion:
+https://master--magenta-douhua-4e8039.netlify.app/
+
