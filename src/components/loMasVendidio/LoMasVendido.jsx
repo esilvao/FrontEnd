@@ -21,8 +21,8 @@ import Row from 'react-bootstrap/Row';
             </Card>
           </Col>
           <Col>
-            <Card className="mt-5 mb-5 ">
-              <Card.Header style={{ textAlign: 'center', fontWeight: 'bold' }}>Lo Mas Vendido Nro. 2</Card.Header>
+            <Card className="mt-5 mb-5">
+              <Card.Header style={{ textAlign: 'center', fontWeight: 'bold'}}>Lo Mas Vendido Nro. 2</Card.Header>
               <Card.Img variant="top" src="https://media.istockphoto.com/id/1352080196/es/foto/retrato-de-un-empresario-maduro-y-amigable.jpg?s=2048x2048&w=is&k=20&c=kBRvkQa2QIwv5rAt8ra9dWd1qBMQ3hl2O0-xeGH3ev8=" alt="S" style={{ width: '200px', height: '250px',  margin: 'auto'  }} />
               <Card.Body style={{ textAlign: 'center' }}>
                 <Card.Title>Traje de Hombre</Card.Title>

@@ -31,8 +31,6 @@ const CardProducts = ({ product }) => {
             </Card>
        
 
-
-
     );
 
 }

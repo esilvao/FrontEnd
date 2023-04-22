@@ -19,7 +19,7 @@ const Products = () => {
   setLoading(false);
   };
     fecthProducts();// aca se llena los datos despues de ejecutarse la función getProducts
-  }, []);  {/*console.log(products)*/ }
+  }, []);  /*console.log(products)*/ 
 
   return (
     <Container className="titulo">

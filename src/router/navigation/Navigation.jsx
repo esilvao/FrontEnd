@@ -50,15 +50,14 @@ const Navigation = () => {
             </Nav>
 
             <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="secondary" >Buscar</Button>
-            </Form>
-
+            <Form.Control
+              type="search"
+              placeholder="Buscar"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="secondary" >Buscar</Button>
+          </Form>
             <Nav>
               {authStatus &&
                 <NavDropdown title={nombreUsuario}>
@@ -68,15 +67,14 @@ const Navigation = () => {
                 </NavDropdown>
               }
               
-              {authStatus ? <Button variant="dark" size="sm" onClick={cerrarSession}>Salir</Button> : <Nav.Link className="me-3" as={NavLink} to="/login">Login</Nav.Link>}
-              <Nav.Link as={NavLink} to='/checkout' >Bolsa de Campras</Nav.Link>
-              <CartIcon />
-
-              {isCartOpen && <CartDropDown />}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+            {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
+            <Nav.Link as={NavLink} to='/checkout' >Bolsa de Compras</Nav.Link>
+            <CartIcon />
+            {isCartOpen && <CartDropDown />}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
 
     </div>
   )

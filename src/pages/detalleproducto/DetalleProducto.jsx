@@ -11,8 +11,7 @@ const DetalleProducto = () => {
   const handleAdd = () => { if(cartCount <= stock) agregarALCarro(product[0])}
   const { id } = useParams(); //* este hook obtiene el id 
 
-  const { image, categoria, subCategoria, producto, marca, genero, talla, color, material,
-    temporada, stock, precio } = product[0];
+ 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -22,7 +21,12 @@ const DetalleProducto = () => {
     fetchProduct();
   }, []);
 
+  if (product.length === 0) {
+    return null;
+  }
 
+  const { image, categoria, subCategoria, producto, marca, genero, talla, color, material,
+    temporada, stock, precio } = product[0];
 
 
   return (
@@ -46,7 +50,7 @@ const DetalleProducto = () => {
               <p className="my-2">Stock: {stock}</p>
               <p className="text-sm font-medium text-gray-900">${precio}</p>
               <Button onClick={handleAdd} variant="success" disabled={stock === 0}>
-                {stock === 0 ? 'Sin Stock' : 'Añadir al caroo'}
+                {stock === 0 ? 'Sin Stock' : 'Añadir al carro'}
               </Button>
             </Col>
           </Row>

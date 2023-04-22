@@ -25,7 +25,7 @@ const CarrucelHome = () => {
         />
         <Carousel.Caption>
           <h3>Moda Mujer</h3>
-          <p className=" mb-2 bg-success bg-gradient text-white rounded-5"> Las tendencias y todo lo que buscas lo tenemos para tí</p>
+          <p className=" mb-2 bg-success bg-gradient text-white rounded-5"> Las tendencias y todo lo que buscas lo tenemos para ti.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -50,7 +50,7 @@ const CarrucelHome = () => {
 
         <Carousel.Caption >
           <h3 >Moda Hombre</h3>
-          <p className=" mb-2 bg-success bg-gradient text-white rounded-5"> Lo que esta de moda y todo lo que más te gusta lo enncuentras aquí.</p>
+          <p className=" mb-2 bg-success bg-gradient text-white rounded-5"> Lo que esta de moda y lo que más te gusta lo enncuentras aquí.</p>
         </Carousel.Caption>
       </Carousel.Item>
 
