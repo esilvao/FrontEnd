@@ -5,7 +5,7 @@ import CartContext from '../../context/cart/CartContext';
 import { useContext } from 'react'
 
 
-{/* desde productos paso las propiedades del producto*/ }
+/* desde productos paso las propiedades del producto*/ 
 const CardProducts = ({ product }) => {
     const { agregarALCarro } = useContext(CartContext)
     const handleAdd = () => { agregarALCarro(product) }

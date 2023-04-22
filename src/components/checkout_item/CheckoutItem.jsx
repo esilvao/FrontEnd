@@ -10,12 +10,12 @@ import { useContext } from 'react';
 import CartContext from '../../context/cart/CartContext';
 
 const CheckoutItem = ({ cartItem }) => {
-  const { agregarALCarro, eliminarDelCarro, limpiarCarro, cartcount, cartTotal } = useContext(CartContext)
-  const { _id, image, categoria, subCategoria, producto, marca, genero, talla, color, material, temporada, stock, precio, quantity } = cartItem
+  const { agregarALCarro, eliminarDelCarro } = useContext(CartContext)
+  const {  image,  producto,  talla,  stock, precio, quantity } = cartItem
 
 
 
-  const clearHandler = () => limpiarCarro(cartItem)
+
   const addHandler = () => { if(quantity < stock) agregarALCarro(cartItem)}
   const removeHandler = () => eliminarDelCarro(cartItem)
 

@@ -10,7 +10,7 @@ import CarrucelLogin from '../../components/carrucelLogin/CarrucelLogin'
 const Login = () => {
 
   const [registrarse, setRegistrarse] = useState(false)
-  const { LoginUser, registerUser, authStatus } = useContext(UserContext)
+  const { LoginUser, registerUser } = useContext(UserContext)
   const navegar = useNavigate()
 
   const userValorInicial = {

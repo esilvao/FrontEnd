@@ -12,15 +12,18 @@ const Products = () => {
   const [loading, setLoading] = useState(true);
 
 
-
-  useEffect(() => {//*no se puede poner async como parametro en useEffects
-  const fecthProducts = async () => { //* el fectch captura los datos desde la bbdd
-  await getProducts(); //primero se ejecuta el obtener productos
-  setLoading(false);
-  };
-    fecthProducts();// aca se llena los datos despues de ejecutarse la función getProducts
-  }, []);  /*console.log(products)*/ 
-
+//*no se puede poner async como parametro en useEffects
+//* el fectch captura los datos desde la bbdd
+//primero se ejecuta el obtener productos
+// aca se llena los datos despues de ejecutarse la función getProducts
+  useEffect(() => {
+      const fecthProducts = async () => { 
+        await getProducts(); 
+        setLoading(false);
+      };
+    fecthProducts();
+  }, []);  
+/*console.log(products)*/ 
   return (
     <Container className="titulo">
       <h1>Nuestros Productos</h1>

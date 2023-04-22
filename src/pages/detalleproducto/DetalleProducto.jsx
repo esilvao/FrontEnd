@@ -25,7 +25,7 @@ const DetalleProducto = () => {
     return null;
   }
 
-  const { image, categoria, subCategoria, producto, marca, genero, talla, color, material,
+  const { image, categoria, subCategoria, marca, talla, color, material,
     temporada, stock, precio } = product[0];
 
 
