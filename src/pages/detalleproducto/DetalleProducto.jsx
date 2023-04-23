@@ -8,7 +8,7 @@ const DetalleProducto = () => {
 
   const { getProduct,product } = useContext(ProductContext)
   const { agregarALCarro, cartCount } = useContext(CartContext)
-  const handleAdd = () => { if(cartCount <= stock) agregarALCarro(product[0])}
+  const handleAdd = () => { agregarALCarro(product[0])}
   const { id } = useParams(); //* este hook obtiene el id 
 
  
