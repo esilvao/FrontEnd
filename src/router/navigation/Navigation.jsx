@@ -67,10 +67,11 @@ const Navigation = () => {
                 </NavDropdown>
               }
               
-            {authStatus && ( <Button variant="dark"  size="sm" onClick={cerrarSession}>Salir</Button> )}
-            <Nav.Link as={NavLink} to='/checkout' >Bolsa de Compras</Nav.Link>
-            <CartIcon />
-            {isCartOpen && <CartDropDown />}
+              {authStatus ? <Button variant="dark" size="sm" onClick={cerrarSession}>Salir</Button> : <Nav.Link className="me-3" as={NavLink} to="/login">Login</Nav.Link>}
+              <Nav.Link as={NavLink} to='/checkout' >Bolsa de Campras</Nav.Link>
+              <CartIcon />
+
+              {isCartOpen && <CartDropDown />}
           </Nav>
         </Navbar.Collapse>
       </Container>
